@@ -50,7 +50,7 @@ def registrarDiploma(discente, dataNascimento, curso, conclusao, cidade, iesEmis
         'gasPrice': gas_price,
         'nonce': w3.eth.getTransactionCount(univ_address)
     })
-    signed_txn2 = w3.eth.account.signTransaction(diploma_txn, private_key=private_key_univ)
+    signed_txn2 = w3.eth.account.signTransaction(diploma_txn, private_key=private_key_univ) #Estes 3 métodos fazem a assinatura
     tx2_hash = w3.eth.sendRawTransaction(signed_txn2.rawTransaction)
     receipt = w3.eth.waitForTransactionReceipt(tx2_hash)
     print(receipt)
